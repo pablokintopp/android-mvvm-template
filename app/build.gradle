@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 28
@@ -16,13 +17,87 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+ext {
+    junitVersion = '4.12'
+    testRunnerVersion = '1.1.0'
+    testEspressoVersion = '3.1.0'
+    constraintLayoutVersion = '1.1.2'
+    mockitoVersion = '2.25.0'
+    supportVersion = '1.0.0'
+    daggerVersion = '2.21'
+    retrofitVersion = '2.4.0'
+    rxJavaVersion = '2.2.6'
+    okHttpVersion = '3.13.1'
+    rxAndroidVersion = '2.1.0'
+    gsonVersion = '2.8.5'
+    glideVersion = '4.8.0'
+    lifecycleVersion = '2.0.0'
+    archCoreVersion = '2.0.0'
+    archNavigationVersion = '1.0.0-rc02'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+
+    /* Tests */
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "android.arch.core:core-testing:$archCoreVersion"
+    androidTestImplementation "androidx.test:runner:$testRunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$testEspressoVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    androidTestImplementation "org.mockito:mockito-android:$mockitoVersion"
+
+    /* AndroidX: Support libraries */
+    implementation "androidx.recyclerview:recyclerview:$supportVersion"
+    implementation "androidx.appcompat:appcompat:$supportVersion"
+    implementation "androidx.cardview:cardview:$supportVersion"
+    implementation "com.google.android.material:material:$supportVersion"
+
+    /* Android Architecture Component - ConstraintLayout  */
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+
+    /* Android Architecture Component - LiveData & ViewModel  */
+    implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
+
+    /* Android Architecture Component - Navigation  */
+    implementation "android.arch.navigation:navigation-fragment:$archNavigationVersion"
+    implementation "android.arch.navigation:navigation-ui:$archNavigationVersion"
+
+    /* Android Architecture Component - Room Persistence Lib  */
+    implementation "android.arch.persistence.room:runtime:$lifecycleVersion"
+    implementation "android.arch.persistence.room:rxjava2:$lifecycleVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$lifecycleVersion"
+
+    /* Dagger */
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    /* Retrofit, RxJava, OkHttp and Gson */
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okHttpVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    /* Glide */
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+
 }
