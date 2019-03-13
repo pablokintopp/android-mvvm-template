@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class RepositoryApiResponse {
+public class SearchRepositoryApiResponse {
     @SerializedName("total_count")
     public Long totalCount;
     @SerializedName("incomplete_results")
