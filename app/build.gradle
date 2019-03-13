@@ -43,6 +43,7 @@ ext {
     lifecycleVersion = '2.0.0'
     archCoreVersion = '2.0.0'
     archNavigationVersion = '1.0.0-rc02'
+    parcelerVersion = '1.1.12'
 }
 
 dependencies {
@@ -98,6 +99,10 @@ dependencies {
     /* Glide */
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+    /* Parceler */
+    implementation "org.parceler:parceler-api:$parcelerVersion"
+    annotationProcessor "org.parceler:parceler:$parcelerVersion"
 
 
 }
