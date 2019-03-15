@@ -1,8 +1,9 @@
-package com.kintopp.pablo.androidmvvmtemplate.data;
+package com.kintopp.pablo.androidmvvmtemplate.data.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.kintopp.pablo.androidmvvmtemplate.data.converter.UserTypeConverter;
+import com.kintopp.pablo.androidmvvmtemplate.data.model.User;
 
 import org.parceler.Parcel;
 
@@ -11,7 +12,7 @@ import androidx.room.TypeConverters;
 
 @Parcel
 @Entity(primaryKeys = ("id"))
-public class Repository {
+public class GithubRepo {
     @Expose
     @SerializedName("id")
     public int id;
@@ -28,4 +29,6 @@ public class Repository {
     @Expose
     @SerializedName("description")
     public String description;
+    @Expose
+    public Long page;
 }

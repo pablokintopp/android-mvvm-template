@@ -2,7 +2,7 @@ package com.kintopp.pablo.androidmvvmtemplate.data.converter;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.kintopp.pablo.androidmvvmtemplate.data.User;
+import com.kintopp.pablo.androidmvvmtemplate.data.model.User;
 
 import java.lang.reflect.Type;
 
