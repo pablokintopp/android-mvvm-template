@@ -1,4 +1,4 @@
-package com.kintopp.pablo.androidmvvmtemplate.ui;
+package com.kintopp.pablo.androidmvvmtemplate.ui.base;
 
 import androidx.lifecycle.ViewModel;
 import io.reactivex.disposables.CompositeDisposable;
