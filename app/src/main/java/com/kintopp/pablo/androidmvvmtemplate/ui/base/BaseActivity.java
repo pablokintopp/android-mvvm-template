@@ -6,4 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class BaseActivity  extends AppCompatActivity implements AppConstants {
 
+    protected String getTag(){
+        return getClass().getSimpleName();
+    }
+
 }

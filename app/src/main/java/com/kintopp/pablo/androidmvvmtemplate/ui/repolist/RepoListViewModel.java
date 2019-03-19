@@ -9,14 +9,18 @@ import com.kintopp.pablo.androidmvvmtemplate.ui.base.BaseViewModel;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import androidx.lifecycle.MutableLiveData;
 
 public class RepoListViewModel extends BaseViewModel {
 
     private GithubRepoRepository githubRepoRepository;
+    private Long currentPage = 1l;
 
     private MutableLiveData<Resource<List<GithubRepo>>> results = new MutableLiveData<>();
 
+    @Inject
     public RepoListViewModel(GithubRepoDao repoDao, GithubApiService apiService) {
         this.githubRepoRepository = new GithubRepoRepository(repoDao, apiService);
     }

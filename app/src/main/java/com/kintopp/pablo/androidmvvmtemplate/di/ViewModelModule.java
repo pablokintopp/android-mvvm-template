@@ -19,7 +19,7 @@ public abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(RepoListViewModel.class)
-    protected abstract ViewModel githubRepoListviewModel(RepoListViewModel repoListViewModel);
+    protected abstract ViewModel repoListViewModel(RepoListViewModel repoListViewModel);
 
 
 }

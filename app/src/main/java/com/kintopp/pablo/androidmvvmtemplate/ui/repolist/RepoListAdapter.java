@@ -15,12 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RepoListAdapter extends RecyclerView.Adapter<RepoListAdapter.CustomViewHolder>{
 
-    private Context context;
+
     private List<GithubRepo> items;
 
 
-    public RepoListAdapter(Context context) {
-        this.context = context;
+    public RepoListAdapter() {
         this.items = new ArrayList<>();
     }
 
